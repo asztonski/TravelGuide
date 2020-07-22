@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "MyraBald";
+    src: url(../images/fonts/Myra4FCaps-Bold.otf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "MyraLight";
+    src: url(../images/fonts/Myra4FCaps-Light.otf);
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Cormorant";
+    src: url(../images/fonts/Cormorant-Light.otf);
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "CormorantItalic";
+    src: url(../images/fonts/Cormorant-Italic.otf);
+    font-weight: 100;
+}
+
+html,body {
+    margin: 0;
+    overflow: hidden;
+}
+
+
+header {
+    height: 100vh;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header img:nth-child(1) {
+    position: absolute;
+    z-index: -1;
+    text-align: center;
+    opacity: 0.95;
+    overflow: hidden;
+    right: 0;
+    width: 120%;
+}
+
+h1, h2, p {
+    text-align: center;
+    opacity: 1;
+}
+
+p {
+    font-size: 17px;
+    font-family: "CormorantItalic";
+}
+
+h1 {
+    font-size: 35px;
+    font-family: "MyraBald";
+}
+
+h2 {
+    font-size: 20px;
+    font-family: "MyraLight";
+}
+
+.changeCountry {
+    width: 100%;
+    text-align: center;
+}
+
+.changeCountry button {
+    text-decoration: none;
+    background-color: transparent;
+    border: 3px solid #7684A1;
+    font-family: "MyraLight";
+    color: white;
+    margin: 0 5px;
+}
