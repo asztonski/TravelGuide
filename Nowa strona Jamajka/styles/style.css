@@ -36,14 +36,23 @@ header {
     flex-direction: column;
 }
 
-header img:nth-child(1) {
+.iconBox {
+    display: flex;
+    justify-content: space-between;
+    margin: 18px;
+}
+
+.iconBox a img {
+    width: 15%;
+    background: transparent;
+}
+
+.background {
     position: absolute;
     z-index: -1;
-    text-align: center;
     opacity: 0.95;
     overflow: hidden;
     right: 0;
-    width: 120%;
 }
 
 h1, h2, p {
@@ -66,6 +75,60 @@ h2 {
     font-family: "MyraLight";
 }
 
+.menuButton {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    transition: .5s ease;
+    overflow: hidden;
+    width: 27px;
+    height: 27px;
+}
+
+ Button:focus {
+    outline: none;
+}
+
+.menuButton span {
+    margin-bottom: 4px;
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    transition: .5s ease;
+}
+
+.menuButton span:nth-child(3) {
+    transform-origin: top right;
+}
+
+.menuButton.active {
+    transform: rotate(90deg);
+}
+
+.menuButton.active span {
+    transition: .5s ease;
+}
+
+.menuButton.active span:nth-child(1) {
+    transform: rotate(135deg) translateX(-4px);
+    transition-delay: 1s;
+}
+
+.menuButton.active span:nth-child(2) {
+    transform: translateX(27px);
+    transition-delay: .5s;
+}
+
+.menuButton.active span:nth-child(3) {
+    transform: rotate(45deg) translateX(1px);
+    transition-delay: 1s;
+}
+
+header p {
+    margin-bottom: 100px;
+}
+
 .changeCountry {
     width: 100%;
     text-align: center;
@@ -73,9 +136,11 @@ h2 {
 
 .changeCountry button {
     text-decoration: none;
-    background-color: transparent;
-    border: 3px solid #7684A1;
+    background-color: rgba(0,0,0,0.5);
     font-family: "MyraLight";
     color: white;
     margin: 0 5px;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
 }
