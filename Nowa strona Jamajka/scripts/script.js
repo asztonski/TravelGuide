@@ -1,22 +1,39 @@
-const menuButtonClick = () => {
-    if (!menuButton.classList.contains("active")) {
-        menuButton.classList.add("active")
-    } else menuButton.classList.remove("active");
-}
+const menuButton = document.querySelectorAll('.menuButton');
+const header = document.querySelectorAll("header");
 
-const menuButton = document.querySelector('.menuButton');
-menuButton.addEventListener('click', menuButtonClick);
-
-// const body = document.querySelector("body").addEventListener('click', function() {
-//     if (menuButton.classList.contains("active")) {
-//         menuButton.classList.remove("active")
-//     };
-// })
-
-window.addEventListener('scroll', function() {
-    const scrollPosition = window.scrollY;
-    const header = document.querySelector("header");
-    if (scrollPosition > header.clientHeight - 20 ) {
-        menuButton.classList.add("black")
-    } else menuButton.classList.remove("black");
+menuButton.forEach(item => {
+    item.addEventListener('click', function() {
+        for (let i = 0; i < menuButton.length; i++) {
+            if (!menuButton[i].classList.contains("active")) {
+                menuButton[i].classList.add("active")
+            } else menuButton[i].classList.remove("active");
+        };
+    })
 });
+
+
+
+ menuButton.forEach(item => {
+    window.addEventListener('scroll', function(item) {
+            const scrollPosition = window.scrollY;
+            for (let i = 0; i < header.length && menuButton.length; i++) {
+            if (scrollPosition > header[i].clientHeight - 20 ) {
+                menuButton[i].classList.add("black")
+            } else menuButton[i].classList.remove("black");
+        }
+    })
+});
+
+const mainContent = document.querySelector('.main');
+const SLUContent = document.querySelector('.StLucia');
+const Flag = document.querySelectorAll('.loadingFlag img');
+// const FlagBox = document.querySelector('loadingFlag');
+const BtnStLucia = document.querySelector('.SLU').addEventListener('click', function() {
+    if (!mainContent.classList.contains("disactive")) {
+        mainContent.classList.add("disactive");
+        SLUContent.classList.add("active");
+        Flag[0].classList.add("active");
+        // FlagBox.classList.add("active");
+    }
+})
+

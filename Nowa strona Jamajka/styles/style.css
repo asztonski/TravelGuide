@@ -39,8 +39,64 @@
     font-family: "Cormorant";
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html,body {
     margin: 0;
+}
+
+.loadingFlag {
+    display: flex;
+    place-content: center;
+    overflow: hidden;
+    position: absolute;
+    /* z-index: -1; */
+}
+
+.loadingFlag img:first-child,
+.loadingFlag img:last-child {
+    z-index: -1;
+    transform: scaleX(0);
+}
+
+.loadingFlag img:first-child {
+    width: 0%;
+    height: 100%;
+}
+
+.loadingFlag img:last-child {
+    width: 0%;
+    height: 101%;
+}
+
+.loadingFlag .active:first-child {
+    transform: translateX(40%);
+    width: 117%;
+    transition: .6s ease-in;
+    z-index: 2;
+    transform-origin: left;
+}
+.loadingFlag .active:last-child {
+    width: 101%;
+    z-index: 2;
+}
+
+.StLucia {
+    display: none;
+}
+
+.StLucia.active {
+    display: block;
+    transition: .3s;
+    transition-delay: 1.3s;
+}
+
+.main.disactive {
+    display: none;
+    transition: .3s;
+    transition-delay: 1.3s;
 }
 
 header {
@@ -50,6 +106,7 @@ header {
     display: flex;
     flex-direction: column;
     margin: 0 18px;
+    padding-bottom: 18px;
 }
 
 section {
@@ -117,8 +174,9 @@ span {
     width: 27px;
     height: 27px;
     position: fixed;
-    right: 0;
-    margin-right: 18px;
+    left: 21%;
+    top: 0;
+    margin: 16px;
 }
 
  Button:focus {
@@ -180,7 +238,7 @@ header p {
 .changeCountry {
     width: 100%;
     text-align: center;
-    margin-bottom: 155px;
+    margin-bottom: 145px;
 }
 
 .changeCountry button {
@@ -188,17 +246,20 @@ header p {
     background-color: rgba(0,0,0,0.5);
     font-family: "MyraLight";
     color: white;
-    margin: 0 5px;
+    margin: 10px 5px;
     box-shadow: 0px 0px 0px transparent;
-    border: 0px solid transparent;
+    border: .5px solid white;
     text-shadow: 0px 0px 0px transparent;
     padding: 15px;
+    position: relative;
 }
 
 .downArrow {
     align-self: center;
     display: flex;
     animation: downArrow .7s infinite alternate-reverse ;
+    width: 38px;
+    height: 37px;
 }
 
 @keyframes downArrow {
