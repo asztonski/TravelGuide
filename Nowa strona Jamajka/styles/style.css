@@ -57,46 +57,114 @@ html,body {
 
 .loadingFlag img:first-child,
 .loadingFlag img:last-child {
-    z-index: -1;
+    z-index: 2;
     transform: scaleX(0);
 }
 
 .loadingFlag img:first-child {
-    width: 0%;
-    height: 100%;
+    transform: translateX(-50%);
+    width: 117%;
+}
+
+.loadingFlag .default:first-child {
+    animation: StLuciaFlagBackward 2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation-fill-mode: forwards;
 }
 
 .loadingFlag img:last-child {
-    width: 0%;
-    height: 101%;
+    transform: translateX(50%);
+    width: 101%;
 }
 
 .loadingFlag .active:first-child {
-    transform: translateX(40%);
-    width: 117%;
-    transition: .6s ease-in;
-    z-index: 2;
-    transform-origin: left;
+    animation: StLuciaFlagForward 2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation-fill-mode: forwards;
 }
+
 .loadingFlag .active:last-child {
-    width: 101%;
+    animation: JamaicaFlagForward 2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes StLuciaFlagForward {
+    0% {transform: translateX(-50%)}
+    50% {transform: translateX(40%)}
+    100% {transform: translateX(136%);}
+}
+
+@keyframes StLuciaFlagBackward {
+    0% {transform: translateX(136%)}
+    50% {transform: translateX(40%)}
+    100% {transform: translateX(-50%);}
+}
+
+@keyframes JamaicaFlagForward {
+    0% {transform: translateX(50%)}
+    50% {transform: translateX(-48%)}
+    100% {transform: translateX(-158%);}
+}
+
+@keyframes JamaicaFlagBackward {
+    0% {transform: translateX(-158%)}
+    50% {transform: translateX(-48%)}
+    100% {transform: translateX(50%);}
+}
+
+.loadingFlag .active:last-child {
     z-index: 2;
 }
 
 .StLucia {
     display: none;
+    opacity: 0;
+    transition: .4s;
+    transition-delay: 1s;
+}
+
+.Jamaica {
+    display: none;
+    opacity: 0;
+    transition: .4s;
+    transition-delay: 1s;
+}
+
+.Jamaica.active {
+    opacity: 1;
+    transition: .4s;
+    transition-delay: 1s;
+}
+
+.Jamaica.block {
+    display: block;
+}
+
+.main {
+    height: auto;
+    opacity: 1;
+    transition: .4s;
+    transition-delay: 1s;
+    display: block;
 }
 
 .StLucia.active {
-    display: block;
-    transition: .3s;
-    transition-delay: 1.3s;
+    opacity: 1;
+    transition: .4s;
+    transition-delay: 1s;
 }
 
+.StLucia.block {
+    display: block;
+}
+
+
 .main.disactive {
+    opacity: 0;
+    transition: .4s;
+    transition-delay: 1s;
+}
+
+.main.none {
     display: none;
-    transition: .3s;
-    transition-delay: 1.3s;
 }
 
 header {
@@ -174,7 +242,7 @@ span {
     width: 27px;
     height: 27px;
     position: fixed;
-    left: 21%;
+    right: 0;
     top: 0;
     margin: 16px;
 }
