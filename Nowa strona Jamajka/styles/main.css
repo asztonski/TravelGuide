@@ -1,0 +1,35 @@
+.main {
+    height: auto;
+    opacity: 1;
+    transition: .4s;
+    transition-delay: 1s;
+    display: block;
+}
+
+.main.disactive {
+    opacity: 0;
+    transition: .4s;
+    transition-delay: 1s;
+}
+
+.main.none {
+    display: none;
+}
+
+.main .changeCountry {
+    text-align: center;
+    margin-bottom: 145px;
+}
+
+.main .changeCountry button {
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.5);
+    font-family: "MyraLight";
+    color: white;
+    margin: 10px 5px;
+    box-shadow: 0px 0px 0px transparent;
+    border: .5px solid white;
+    text-shadow: 0px 0px 0px transparent;
+    padding: 15px;
+    position: relative;
+}

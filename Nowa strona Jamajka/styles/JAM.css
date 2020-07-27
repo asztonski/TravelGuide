@@ -1,0 +1,63 @@
+.Jamaica {
+    display: none;
+    opacity: 0;
+    transition: .4s;
+    transition-delay: 1s;
+}
+
+.Jamaica.active {
+    opacity: 1;
+    transition: .4s;
+    transition-delay: 1s;
+}
+
+.Jamaica.block {
+    display: block;
+}
+
+.loadingFlag .active:last-child {
+    animation: JamaicaFlagForward 2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation-fill-mode: forwards;
+}
+
+.loadingFlag .default:last-child {
+    animation: JamaicaFlagBackward 2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation-fill-mode: forwards;
+    display: block;
+}
+
+.loadingFlag img:last-child {
+    transform: translateX(50%);
+    width: 101%;
+}
+
+@keyframes JamaicaFlagForward {
+    0% {transform: translateX(50%)}
+    50% {transform: translateX(-48%)}
+    100% {transform: translateX(-158%);}
+}
+
+@keyframes JamaicaFlagBackward {
+    0% {transform: translateX(-158%)}
+    50% {transform: translateX(-63%)}
+    100% {transform: translateX(50%);}
+}
+
+.loadingFlag .active:last-child {
+    z-index: 2;
+}
+
+.Jamaica .changeCountry {
+    transform: rotate(180deg);
+    text-align: end;
+}
+
+.Jamaica .changeCountry button {
+    animation: arrowLeft .7s ease-in infinite alternate;
+    animation-delay: .05s;
+}
+
+@keyframes arrowLeft {
+    from {transform: translateX(0)}
+    to {transform: translateX(-4px)}
+}

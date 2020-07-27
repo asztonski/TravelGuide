@@ -1,3 +1,5 @@
+/* Fonts */
+
 @font-face {
     font-family: "MyraBold";
     src: url(../images/fonts/Myra4FCaps-Bold.otf);
@@ -22,6 +24,8 @@
     font-weight: 100;
 }
 
+/* Font Classes */
+
 
 .bold {
     font-family: "MyraBold";
@@ -39,169 +43,18 @@
     font-family: "Cormorant";
 }
 
+/* General */
+
 html {
     scroll-behavior: smooth;
 }
 
+html.menu {
+    overflow: hidden;
+}
+
 html,body {
     margin: 0;
-}
-
-.loadingFlag {
-    display: flex;
-    place-content: center;
-    overflow: hidden;
-    position: absolute;
-    /* z-index: -1; */
-}
-
-.loadingFlag img:first-child,
-.loadingFlag img:last-child {
-    z-index: 2;
-    transform: scaleX(0);
-}
-
-.loadingFlag img:first-child {
-    transform: translateX(-50%);
-    width: 117%;
-}
-
-.loadingFlag .default:first-child {
-    animation: StLuciaFlagBackward 2s cubic-bezier(0.34, 1.56, 0.64, 1);
-    animation-fill-mode: forwards;
-}
-
-.loadingFlag img:last-child {
-    transform: translateX(50%);
-    width: 101%;
-}
-
-.loadingFlag .active:first-child {
-    animation: StLuciaFlagForward 2s cubic-bezier(0.34, 1.56, 0.64, 1);
-    animation-fill-mode: forwards;
-}
-
-.loadingFlag .active:last-child {
-    animation: JamaicaFlagForward 2s cubic-bezier(0.34, 1.56, 0.64, 1);
-    animation-fill-mode: forwards;
-}
-
-@keyframes StLuciaFlagForward {
-    0% {transform: translateX(-50%)}
-    50% {transform: translateX(40%)}
-    100% {transform: translateX(136%);}
-}
-
-@keyframes StLuciaFlagBackward {
-    0% {transform: translateX(136%)}
-    50% {transform: translateX(40%)}
-    100% {transform: translateX(-50%);}
-}
-
-@keyframes JamaicaFlagForward {
-    0% {transform: translateX(50%)}
-    50% {transform: translateX(-48%)}
-    100% {transform: translateX(-158%);}
-}
-
-@keyframes JamaicaFlagBackward {
-    0% {transform: translateX(-158%)}
-    50% {transform: translateX(-48%)}
-    100% {transform: translateX(50%);}
-}
-
-.loadingFlag .active:last-child {
-    z-index: 2;
-}
-
-.StLucia {
-    display: none;
-    opacity: 0;
-    transition: .4s;
-    transition-delay: 1s;
-}
-
-.Jamaica {
-    display: none;
-    opacity: 0;
-    transition: .4s;
-    transition-delay: 1s;
-}
-
-.Jamaica.active {
-    opacity: 1;
-    transition: .4s;
-    transition-delay: 1s;
-}
-
-.Jamaica.block {
-    display: block;
-}
-
-.main {
-    height: auto;
-    opacity: 1;
-    transition: .4s;
-    transition-delay: 1s;
-    display: block;
-}
-
-.StLucia.active {
-    opacity: 1;
-    transition: .4s;
-    transition-delay: 1s;
-}
-
-.StLucia.block {
-    display: block;
-}
-
-
-.main.disactive {
-    opacity: 0;
-    transition: .4s;
-    transition-delay: 1s;
-}
-
-.main.none {
-    display: none;
-}
-
-header {
-    height: 100vh;
-    color: white;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    margin: 0 18px;
-    padding-bottom: 18px;
-}
-
-section {
-    padding: 30px;
-}
-
-.iconBox {
-    display: flex;
-    justify-content: space-between;
-    margin: 18px 0;
-}
-
-.iconBox a {
-    width: 27px;
-}
-
-.iconBox a img {
-    background: transparent;
-}
-
-.background {
-    position: absolute;
-    z-index: -1;
-    opacity: 0.95;
-    overflow: hidden;
-    right: 0;
-    width: 120%;
 }
 
 h1, h2, p {
@@ -231,6 +84,151 @@ span {
     display: block;
 }
 
+Button:focus {
+    outline: none;
+}
+
+section {
+    padding: 30px;
+}
+
+
+/* Common */
+
+/* Header */
+.menuBox {
+    position: absolute;
+    background-color: rgba(0, 0,0,0.2);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url(../images/bodyBg.jpg);
+    opacity: 0;
+    transition-delay: 1.3s;
+}
+
+.menu .menuBox {
+    opacity: 0.17;
+    transition-delay: 0s;
+    transition: 0s;
+}
+
+.socialBox {
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    z-index: -2;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.menu .socialBox {
+    z-index: 1;
+}
+
+.socialBox a {
+    width: 45px;
+    height: 45px;
+    display: block;
+    margin-bottom: 35px;
+    background-color: tomato;
+    border: 0.5px solid black;
+    border-radius: 100%;
+    color: white;
+    transform: translateX(100%);
+    transition: .35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.socialBox a:first-child {
+    margin-top: 50px;
+}
+
+.socialBox a:last-child {
+    margin-bottom: 0;
+}
+
+.menu .socialBox a {
+    transition: .35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateX(-15%);
+}
+
+.menu .socialBox a:first-child {
+    transition-delay: 1.3s;
+}
+
+.menu .socialBox a:nth-child(2) {
+    transition-delay: 1.75s;
+}
+
+.menu .socialBox a:last-child {
+    transition-delay: 2.15s;
+}
+
+.menu .menuBox {
+    /* z-index: 1; */
+    transition-delay: 1s;
+}
+
+.loadingFlag {
+    display: flex;
+    place-content: center;
+    overflow: hidden;
+    position: absolute;
+}
+
+.loadingFlag img:first-child,
+.loadingFlag img:last-child {
+    z-index: 2;
+}
+
+.menu #content {
+    transform: rotate(18deg) translate(-74%, 6%)scale(1.15);
+    /* transform-origin: top right; */
+    transition: .35s ease-in;
+    transition-delay: .7s;
+}
+
+header {
+    height: 100vh;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 0 18px;
+    padding-bottom: 18px;
+}
+
+.iconBox {
+    display: flex;
+    justify-content: space-between;
+    margin: 18px 0;
+}
+
+.iconBox a {
+    width: 27px;
+}
+
+.iconBox a img {
+    background: transparent;
+}
+
+.background {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.95;
+    overflow: hidden;
+    right: 0;
+    width: 120%;
+}
+
 .menuButton {
     background-color: transparent;
     border: none;
@@ -245,10 +243,6 @@ span {
     right: 0;
     top: 0;
     margin: 16px;
-}
-
- Button:focus {
-    outline: none;
 }
 
 .menuButton span {
@@ -305,21 +299,44 @@ header p {
 
 .changeCountry {
     width: 100%;
-    text-align: center;
-    margin-bottom: 145px;
+    margin-bottom: 115px;
 }
 
 .changeCountry button {
     text-decoration: none;
-    background-color: rgba(0,0,0,0.5);
-    font-family: "MyraLight";
-    color: white;
     margin: 10px 5px;
     box-shadow: 0px 0px 0px transparent;
-    border: .5px solid white;
     text-shadow: 0px 0px 0px transparent;
-    padding: 15px;
     position: relative;
+    background-color: transparent;
+    border: none;
+}
+
+.menu .changeCountry button {
+    z-index: -1;
+}
+
+
+.changeCountry div:first-child {
+    transform: rotate(45deg);
+    margin-bottom: 8px;
+}
+
+.changeCountry div:last-child {
+    transform: rotate(-45deg);
+}
+
+.changeCountry button span {
+    background-color: white;
+    display: block;
+    width: 20px;
+    height: 3px;
+    margin: 5px 0;
+}
+
+.Jamaica header .light,
+.StLucia header .light {
+    margin-bottom: 45px;
 }
 
 .downArrow {
