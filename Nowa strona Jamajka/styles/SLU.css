@@ -1,14 +1,5 @@
 .StLucia {
     display: none;
-    opacity: 0;
-    transition: .4s;
-    transition-delay: 1s;
-}
-
-.StLucia.active {
-    opacity: 1;
-    transition: .4s;
-    transition-delay: 1s;
 }
 
 .StLucia.block {
@@ -34,7 +25,7 @@
 @keyframes StLuciaFlagForward {
     0% {transform: translateX(-50%)}
     50% {transform: translateX(40%)}
-    100% {transform: translateX(136%);}
+    100% {transform: translateX(138%);}
 }
 
 @keyframes StLuciaFlagBackward {
@@ -45,13 +36,29 @@
 
 .StLucia .changeCountry {
     text-align: end;
+    opacity: 0;
+}
+
+.StLucia .downArrow {
+    opacity: 0;
+}
+
+.StLucia.active .downArrow,
+.StLucia.active .changeCountry {
+   animation: visible .35s ease-in-out;
+   animation-fill-mode: forwards;
+   animation-delay: .6s;
+}
+
+@keyframes visible {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 .StLucia .changeCountry button {
     animation: arrowRight .7s ease-in infinite alternate;
     animation-delay: .05s;
 }
-
 @keyframes arrowRight {
     from {transform: translateX(0)}
     to {transform: translateX(4px);}

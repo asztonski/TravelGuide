@@ -6,12 +6,6 @@
     display: block;
 }
 
-.main.disactive {
-    opacity: 0;
-    transition: .4s;
-    transition-delay: 1s;
-}
-
 .main.none {
     display: none;
 }
@@ -32,4 +26,13 @@
     text-shadow: 0px 0px 0px transparent;
     padding: 15px;
     position: relative;
+}
+
+.main .downArrow.hidden {
+    opacity: 0;
+}
+
+.main .downArrow {
+    opacity: 1;
+    transition: .35s ease-in;
 }

@@ -1,14 +1,5 @@
 .Jamaica {
     display: none;
-    opacity: 0;
-    transition: .4s;
-    transition-delay: 1s;
-}
-
-.Jamaica.active {
-    opacity: 1;
-    transition: .4s;
-    transition-delay: 1s;
 }
 
 .Jamaica.block {
@@ -28,12 +19,12 @@
 
 .loadingFlag img:last-child {
     transform: translateX(50%);
-    width: 101%;
+    width: 105%;
 }
 
 @keyframes JamaicaFlagForward {
     0% {transform: translateX(50%)}
-    50% {transform: translateX(-48%)}
+    50% {transform: translateX(-55%)}
     100% {transform: translateX(-158%);}
 }
 
@@ -60,4 +51,25 @@
 @keyframes arrowLeft {
     from {transform: translateX(0)}
     to {transform: translateX(-4px)}
+}
+
+.Jamaica .changeCountry {
+    text-align: end;
+    opacity: 0;
+}
+
+.Jamaica .downArrow {
+    opacity: 1;
+}
+
+.Jamaica.active .downArrow,
+.Jamaica.active .changeCountry {
+   animation: visible .35s ease-in-out;
+   animation-fill-mode: forwards;
+   animation-delay: .6s;
+}
+
+@keyframes visible {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
